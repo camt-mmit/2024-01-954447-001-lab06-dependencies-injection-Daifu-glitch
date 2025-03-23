@@ -1,0 +1,65 @@
+/* Style for the Add Section button */
+.add-section-btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.add-section-btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Styling for the section container */
+.section-container {
+  margin-bottom: 25px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Styling for the section header (Remove Section button and section number) */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.remove-section-btn {
+  background-color: #f44336; /* Red */
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-section-btn:hover {
+  background-color: #e53935; /* Darker red on hover */
+}
+
+.remove-section-btn:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+/* Styling for the section number text */
+.section-number {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Optional styling for inputs inside the dynamic component */
+app-dynamic-input {
+  margin-top: 15px;
+}

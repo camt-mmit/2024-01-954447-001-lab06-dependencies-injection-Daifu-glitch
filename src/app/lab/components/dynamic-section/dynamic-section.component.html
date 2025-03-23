@@ -1,0 +1,16 @@
+<!-- Add Section Button (Outside of *ngFor) -->
+<button (click)="addSection()" class="add-section-btn">Add Section</button>
+
+<div *ngFor="let section of sections; let i = index" class="section-container">
+
+  <!-- Remove Section Button and Section Number in the same row -->
+  <div class="section-header">
+    <div class="section-number">Section {{ i + 1 }}</div>
+    <button (click)="removeSection(i)" [disabled]="sections.length === 1" class="remove-section-btn">Remove Section</button>
+  </div>
+
+  <app-dynamic-input
+    [inputs]="section"
+    (inputsChange)="updateInputs(i, $event)">
+  </app-dynamic-input>
+</div>

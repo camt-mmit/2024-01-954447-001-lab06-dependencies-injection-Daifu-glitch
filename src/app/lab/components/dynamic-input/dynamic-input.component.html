@@ -1,0 +1,12 @@
+<button (click)="addInput()" class="add-input-btn">Add Input</button>
+
+<!-- Loop through each input -->
+<div *ngFor="let input of inputs; let i = index" class="input-row">
+  <input type="number" [value]="input" (input)="updateValue(i, $event)" class="input-field">
+  <button (click)="removeInput(i)" [disabled]="inputs.length === 1" class="remove-btn">Remove Input</button>
+</div>
+
+<!-- Show the sum of the inputs for the section -->
+<div class="total">
+  <strong>Total: </strong> {{ getTotal() }}
+</div>

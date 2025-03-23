@@ -1,0 +1,22 @@
+:host {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  ---actions-bar-height: 64px;
+}
+
+.-cmp-actions-bar {
+  position: sticky;
+  top: 0px;
+  z-index: 9999;
+  height: var(---actions-bar-height);
+
+  background-color: var(--app-background-color);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8px;
+}
