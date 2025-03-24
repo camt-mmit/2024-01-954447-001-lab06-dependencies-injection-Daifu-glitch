@@ -23,21 +23,19 @@ export class DynamicInputComponent {
   }
 
   addInput(): void {
-    this.inputs = [...this.inputs, 0];  // Create a new reference for inputs array
+    this.inputs.push(0);
     this.emitChange();
-    this.cdr.markForCheck(); // Manually trigger change detection
   }
 
   removeInput(index: number): void {
     if (this.inputs.length > 1) {
       this.inputs.splice(index, 1);
-      this.inputs = [...this.inputs];  // Ensure a new reference is set
       this.emitChange();
     }
   }
 
   emitChange(): void {
-    this.inputsChange.emit(this.inputs);
+    this.inputsChange.emit([...this.inputs]);
   }
 
   getTotal(): number {
