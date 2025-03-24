@@ -17,10 +17,13 @@ export class DynamicInputComponent {
 
   updateValue(index: number, event: Event): void {
     const inputElement = event.target as HTMLInputElement;
-    this.inputs[index] = inputElement.valueAsNumber || 0;
+    const newInputs = [...this.inputs]; // Copy array เพื่อป้องกัน reference ปัญหา
+    newInputs[index] = inputElement.valueAsNumber || 0;
+    this.inputs = newInputs;
     this.emitChange();
-    this.cdr.markForCheck(); // Manually trigger change detection
-  }
+    this.cdr.markForCheck();
+}
+
 
   addInput(): void {
     this.inputs.push(0);

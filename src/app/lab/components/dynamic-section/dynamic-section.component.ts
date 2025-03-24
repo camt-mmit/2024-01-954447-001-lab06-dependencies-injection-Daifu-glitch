@@ -27,17 +27,10 @@ export class DynamicSectionComponent {
   }
 
   updateInputs(sectionIndex: number, updatedInputs: number[]): void {
-    const currentSection = this.sections[sectionIndex];
-
-    // Empty the array first to avoid modifying the reference
-    currentSection.splice(0, currentSection.length);
-
-    // Add the updated values
-    updatedInputs.forEach(value => currentSection.push(value));
-
-    // Emit the updated sections with a new reference
+    this.sections[sectionIndex] = [...updatedInputs]; // สร้าง array ใหม่แทนของเดิม
     this.emitChange();
-  }
+}
+
 
 
   emitChange(): void {
